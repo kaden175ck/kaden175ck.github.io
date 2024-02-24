@@ -4,3 +4,4 @@
 
 layout: home
 ---
+![Alt text for the image](/assets/images/my-first-post-image.jpg)
