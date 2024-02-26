@@ -74,10 +74,58 @@ This code applies the Girvan-Newman algorithm to the network. The `girvan_newman
 
 The output will be a list of community groupings at each level of edge removal. Each grouping shows how the network divides into communities as the algorithm progresses. 
 
-Community 0: [{1, 2, 3, 4}, {8, 5, 6, 7}]
-Community 1: [{1, 2, 3, 4}, {5, 6, 7}, {8}]
-Community 2: [{1}, {2, 3, 4}, {5, 6, 7}, {8}]
-Community 3: [{1}, {2}, {3, 4}, {5, 6, 7}, {8}]
-Community 4: [{1}, {2}, {3}, {4}, {5, 6, 7}, {8}]
-Community 5: [{1}, {2}, {3}, {4}, {5}, {6, 7}, {8}]
-Community 6: [{1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}]
+### Community 0
+- `{1, 2, 3, 4}`
+- `{8, 5, 6, 7}`
+
+### Community 1
+- `{1, 2, 3, 4}`
+- `{5, 6, 7}`
+- `{8}`
+
+### Community 2
+- `{1}`
+- `{2, 3, 4}`
+- `{5, 6, 7}`
+- `{8}`
+
+### Community 3
+- `{1}`
+- `{2}`
+- `{3, 4}`
+- `{5, 6, 7}`
+- `{8}`
+
+### Community 4
+- `{1}`
+- `{2}`
+- `{3}`
+- `{4}`
+- `{5, 6, 7}`
+- `{8}`
+
+### Community 5
+- `{1}`
+- `{2}`
+- `{3}`
+- `{4}`
+- `{5}`
+- `{6, 7}`
+- `{8}`
+
+### Community 6
+- `{1}`
+- `{2}`
+- `{3}`
+- `{4}`
+- `{5}`
+- `{6}`
+- `{7}`
+- `{8}`
+- **Community 0**: The network is initially divided into two communities. This division represents the broadest distinction within the network, identifying two core groups that are more connected internally than they are to each other.
+
+- **Community 1**: As the algorithm progresses, one of the communities is further divided, showing a finer level of structure within the network. This indicates that within one of the initial communities, there is a subgroup that has its own distinct set of connections.
+
+- **Communities 2 to 6**: Each subsequent division represents a continued refinement in identifying communities within the network. The algorithm uncovers smaller and more specific groups of nodes that are closely connected, indicating layers of community structure.
+
+- **Community 6**: Finally, every node is considered its own community. This represents the most refined level of division possible and indicates that all bridges connecting distinct groups have been removed.
