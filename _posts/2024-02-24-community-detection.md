@@ -64,12 +64,20 @@ This code creates and draws a simple network of 8 nodes with specific connection
 communities = list(girvan_newman(G))
 
 # Print the communities
-for community in communities:
-    print(list(community))
+for i, community in enumerate(communities):
+    print(f"Community {i}: {list(community)}") 
 ```
 
 This code applies the Girvan-Newman algorithm to the network. The `girvan_newman` function returns an iterator over communities at each level of the algorithm. For simplicity, we convert it to a list and print the communities.
 
 ### Step 4: Understanding the Output
 
-The output will be a list of community groupings at each level of edge removal. Each grouping shows how the network divides into communities as the algorithm progresses. Initially, you might see the whole network as a single community, which then splits into smaller communities.
+The output will be a list of community groupings at each level of edge removal. Each grouping shows how the network divides into communities as the algorithm progresses. 
+
+Community 0: [{1, 2, 3, 4}, {8, 5, 6, 7}]
+Community 1: [{1, 2, 3, 4}, {5, 6, 7}, {8}]
+Community 2: [{1}, {2, 3, 4}, {5, 6, 7}, {8}]
+Community 3: [{1}, {2}, {3, 4}, {5, 6, 7}, {8}]
+Community 4: [{1}, {2}, {3}, {4}, {5, 6, 7}, {8}]
+Community 5: [{1}, {2}, {3}, {4}, {5}, {6, 7}, {8}]
+Community 6: [{1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}]
