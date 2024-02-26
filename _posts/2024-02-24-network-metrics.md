@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Understanding Degree Centrality"
+title: "Network Metrics and Measures"
 date: 2024-02-24
 categories: SNA
 ---
