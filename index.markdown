@@ -5,3 +5,12 @@
 layout: home
 ---
 ![Alt text for the image](/assets/images/my-first-post-image.jpg)
+
+
+<h1>Categories</h1>
+
+<ul>
+  <li><a href="{{ site.baseurl }}/categories/sna">SNA</a></li>
+  <li><a href="{{ site.baseurl }}/categories/general">General</a></li>
+  <li><a href="{{ site.baseurl }}/categories/leetcode">LeetCode</a></li>
+</ul>
