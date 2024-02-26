@@ -1,16 +1,29 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: default
 ---
-![Alt text for the image](/assets/images/my-first-post-image.jpg)
+<div style="text-align: center; margin-top: 20px; font-size: 24px; font-style: italic;">
+    "The mountains are calling, and I must go."
+</div>
 
+<img src="/assets/images/mountains.webp" alt="Banner Image" style="width: 80%; height: auto; margin: 0 auto; display: block;"/>
 
-<h1>Categories</h1>
+<div>
+    <h1>Categories</h1>
+    <ul>
+        <li><a href="/categories/sna">SNA</a></li>
+        <li><a href="/categories/general">General</a></li>
+        <li><a href="/categories/leetcode">LeetCode</a></li>
+    </ul>
+</div>
 
-<ul>
-  <li><a href="{{ site.baseurl }}/categories/sna">SNA</a></li>
-  <li><a href="{{ site.baseurl }}/categories/general">General</a></li>
-  <li><a href="{{ site.baseurl }}/categories/leetcode">LeetCode</a></li>
-</ul>
+<div>
+    <h2>Latest Posts</h2>
+    <ul>
+        {% for post in site.posts limit:3 %}
+        <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <p>{{ post.date | date: "%B %d, %Y" }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
