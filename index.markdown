@@ -13,6 +13,7 @@ layout: default
         <li><a href="/categories/sna">SNA</a></li>
         <li><a href="/categories/general">General</a></li>
         <li><a href="/categories/leetcode">LeetCode</a></li>
+        <li><a href="/categories/machine learning">Machine Learning</a></li>
     </ul>
 </div>
 
