@@ -132,5 +132,46 @@ You'll sometimes see the union symbol (U) used in set theory in the context of r
 
 * DFAs and Regular Expressions are closely related.  Every regular expression has an equivalent DFA, and vice versa
 * NFAs are more flexible, but both can recognize the same class of languages (regular languages).
+---
+<br>
+<br>
+<br>
 
+### Claim
+
+For a deterministic finite automaton (DFA) designed to recognize the language L(M) consisting of strings with an even number of 0's, we define two states: \(q_0\) and \(q_1\). State \(q_0\) is reached after processing an even number of 0's, and state \(q_1\) is reached after processing an odd number of 0's.
+
+### Proof by Induction
+
+We will use proof by induction on the length of the input to demonstrate that our DFA correctly ends in state \(q_0\) for inputs with an even number of 0's and in state \(q_1\) for inputs with an odd number of 0's.
+
+#### Base Case: \(k=0\)
+
+For the input \(\lambda\) (the empty string), the length of the input is 0. Since the empty string contains an even number of 0's (zero is even), the transition ends in state \(q_0\). This establishes our base case.
+
+#### Inductive Step
+
+Let's assume our claim holds for all strings of length \(k\). Now, consider an input of length \(k+1\), represented as \(x = x_1x_2x_3...x_{k+1}\).
+
+##### Case 1: \(x\) has an odd number of 0's.
+
+To demonstrate that the DFA ends in state \(q_1\), we decompose \(x\) into \(a0b\), where \(a\) contains an even number of 0's and \(b\) contains no 0's. After processing \(a\), the DFA is in state \(q_0\) by our inductive hypothesis, since \(a\) has an even number of 0's.
+
+When the DFA processes the 0 in \(a0b\), it transitions from \(q_0\) to \(q_1\), reflecting the odd number of 0's processed up to this point. Since \(b\) contains no 0's, processing \(b\) does not change the state, and the DFA remains in \(q_1\).
+
+##### Case 2: \(x\) has an even number of 0's.
+
+Let's split this case into two scenarios for clarity:
+
+1. **\(x\) ends with a non-zero element**: In this case, removing the last element does not change the parity of 0's in \(x\). By the inductive hypothesis, if \(x\) without the last element ends in \(q_0\), then \(x\) itself also ends in \(q_0\), as the last element does not affect the state transition for 0's.
+
+2. **\(x\) is formed by adding a 0 to a string with an odd number of 0's**: In this scenario, let \(x = a0\), where \(a\) has an odd number of 0's. By the inductive hypothesis, processing \(a\) would lead to state \(q_1\). Adding another 0 transitions the DFA back to \(q_0\), consistent with \(x\) having an even number of 0's.
+
+Thus, through induction, we've shown that the DFA correctly ends in state \(q_0\) after processing strings with an even number of 0's and in state \(q_1\) after processing strings with an odd number of 0's, proving our claim.
+
+
+---
+<br>
+<br>
+<br>
 
