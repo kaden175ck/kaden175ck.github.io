@@ -7,7 +7,19 @@ categories: general
 
 **Front Notes**
 
-* I found the MIT open lectures by Michael Sipser and the Easy Theory YouTube channel to be incredibly helpful in understanding the course material. Most importantly, avoid Eberly at all cost.
+* The Theory of Computer Science is very abstract, and to be honest, you won't use it directly in most programming roles. However, if you're interested in compiler design, you should take this subject seriously. I found the MIT open lectures by Michael Sipser and the Easy Theory YouTube channel incredibly helpful for understanding the course material. Most importantly, avoid <a href="https://www.ratemyprofessors.com/professor/31280" target="_blank"><b>Eberly </b></a>at all costs.
+<iframe 
+      width="300" 
+      src="https://www.youtube.com/embed/oNsscmUwjMU?si=YIIPV3eptx_ltOaA" 
+      title="YouTube video player" frameborder="0" allow="accelerometer; 
+      autoplay; clipboard-write; encrypted-media; gyroscope; 
+      picture-in-picture; web-share" allowfullscreen>
+</iframe>
+<iframe width="300"  src="https://www.youtube.com/embed/7GWP0oP4_Vc?si=XshdfNsjLtCZd8ee" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+<hr/>
+<br>
 
 **What are Regular Expressions?**
 
@@ -132,42 +144,6 @@ You'll sometimes see the union symbol (U) used in set theory in the context of r
 
 * DFAs and Regular Expressions are closely related.  Every regular expression has an equivalent DFA, and vice versa
 * NFAs are more flexible, but both can recognize the same class of languages (regular languages).
----
-<br>
-<br>
-<br>
-
-### Claim
-
-For a deterministic finite automaton (DFA) designed to recognize the language L(M) consisting of strings with an even number of 0's, we define two states: \(q_0\) and \(q_1\). State \(q_0\) is reached after processing an even number of 0's, and state \(q_1\) is reached after processing an odd number of 0's.
-
-### Proof by Induction
-
-We will use proof by induction on the length of the input to demonstrate that our DFA correctly ends in state \(q_0\) for inputs with an even number of 0's and in state \(q_1\) for inputs with an odd number of 0's.
-
-#### Base Case: \(k=0\)
-
-For the input \(\lambda\) (the empty string), the length of the input is 0. Since the empty string contains an even number of 0's (zero is even), the transition ends in state \(q_0\). This establishes our base case.
-
-#### Inductive Step
-
-Let's assume our claim holds for all strings of length \(k\). Now, consider an input of length \(k+1\), represented as \(x = x_1x_2x_3...x_{k+1}\).
-
-##### Case 1: \(x\) has an odd number of 0's.
-
-To demonstrate that the DFA ends in state \(q_1\), we decompose \(x\) into \(a0b\), where \(a\) contains an even number of 0's and \(b\) contains no 0's. After processing \(a\), the DFA is in state \(q_0\) by our inductive hypothesis, since \(a\) has an even number of 0's.
-
-When the DFA processes the 0 in \(a0b\), it transitions from \(q_0\) to \(q_1\), reflecting the odd number of 0's processed up to this point. Since \(b\) contains no 0's, processing \(b\) does not change the state, and the DFA remains in \(q_1\).
-
-##### Case 2: \(x\) has an even number of 0's.
-
-Let's split this case into two scenarios for clarity:
-
-1. **\(x\) ends with a non-zero element**: In this case, removing the last element does not change the parity of 0's in \(x\). By the inductive hypothesis, if \(x\) without the last element ends in \(q_0\), then \(x\) itself also ends in \(q_0\), as the last element does not affect the state transition for 0's.
-
-2. **\(x\) is formed by adding a 0 to a string with an odd number of 0's**: In this scenario, let \(x = a0\), where \(a\) has an odd number of 0's. By the inductive hypothesis, processing \(a\) would lead to state \(q_1\). Adding another 0 transitions the DFA back to \(q_0\), consistent with \(x\) having an even number of 0's.
-
-Thus, through induction, we've shown that the DFA correctly ends in state \(q_0\) after processing strings with an even number of 0's and in state \(q_1\) after processing strings with an odd number of 0's, proving our claim.
 
 
 ---
@@ -175,9 +151,7 @@ Thus, through induction, we've shown that the DFA correctly ends in state \(q_0\
 <br>
 <br>
 
-####  3.5 Exercise Solution
-
-To describe each of the languages you've listed based on the sets \(A = \{1, 00\}\) and \(B = \{11, 10, \lambda\}\), we will break down each operation and its resulting language.
+**Some exercise Questions**
 
 ### 1. \(AB\)
 
@@ -244,9 +218,6 @@ Since \(A \cup B = \{1, 00, 11, 10, \lambda\}\), \((A \cup B)^*\) is an infinite
 This explanation steps through the composition and interpretation of each language operation based on the initial sets \(A\) and \(B\). Each step builds on the understanding of how operations like concatenation, union, and the Kleene Star affect the formation of new languages from the original sets.
 
 
-
-To decide if each statement is true for every language \(A\), let's examine them one by one.
-
 ### 1. \(A^* = (A^*)^*\)
 
 The Kleene Star operation (\(*\)) on a language \(A\) results in a language that includes all possible strings of zero or more concatenations of strings from \(A\), including the empty string \(\lambda\). Therefore, \(A^*\) includes \(\lambda\), all strings in \(A\), all strings formed by concatenating one or more strings from \(A\), and so on.
@@ -272,75 +243,8 @@ This distinction means that while \(A^+\) and \((A^+)^*\) contain all the same s
 Thus, the statement \(A^+ = (A^+)^*\) is **false** because \((A^+)^*\) includes \(\lambda\), whereas \(A^+\) does not.
 
 
+**Symbol Clarification**
 
-To evaluate the statement \(\{0, 1\}^* = (\{0\}\{1\})^*\), let's understand what each part represents:
+- **⊆ (Subset):** This symbol is used to denote that one set is a subset of another set. When we say "A ⊆ B", it means every element of set A is also an element of set B. It's important to note that a set is considered a subset of itself, so A ⊆ A is always true. Additionally, this symbol allows for the possibility that the two sets are equal, meaning that A can be exactly the same as B.
 
-- \(\{0, 1\}^*\) represents the set of all possible strings (including the empty string \(\lambda\)) that can be formed using the symbols \(0\) and \(1\). This includes strings like \(\lambda\), \(0\), \(1\), \(00\), \(01\), \(10\), \(11\), \(000\), and so forth, ad infinitum. Essentially, it encompasses every conceivable combination of \(0\)s and \(1\)s of any length.
-
-- \((\{0\}\{1\})^*\) represents the set of all possible strings that can be formed by concatenating the string \(0\) followed by the string \(1\) any number of times, including zero times (which includes the empty string \(\lambda\)). Examples of strings in this language include \(\lambda\) (from zero concatenations), \(01\) (from one concatenation of \(0\) followed by \(1\)), \(0101\) (from two concatenations), \(010101\) (from three concatenations), and so on.
-
-Given these definitions, the statement \(\{0, 1\}^* = (\{0\}\{1\})^*\) suggests that the set of all strings formed by any combination of \(0\)s and \(1\)s is equal to the set of strings formed by repeated concatenations of \(0\) followed by \(1\).
-
-This statement, however, is **false**. The reason is that while \(\{0, 1\}^*\) includes any combination of \(0\)s and \(1\)s in any order, \((\{0\}\{1\})^*\) only includes those strings where every \(0\) is directly followed by a \(1\) with no \(0\)s adjacent to each other or \(1\)s adjacent to each other unless repeated in the pattern \(01\). Therefore, \((\{0\}\{1\})^*\) is a subset of \(\{0, 1\}^*\), but not equal to it. For example, the string \(00\) or \(11\) can be included in \(\{0, 1\}^*\), but not in \((\{0\}\{1\})^*\) because they do not follow the strict pattern of alternating \(0\)s and \(1\)s starting with \(0\) and followed by \(1\).
-
-
-To evaluate the statement \(\{0, 1\}^* = (\{0\}^* \{1\}^*)^*\), let's analyze both sides of the equation:
-
-1. \(\{0, 1\}^*\) represents the set of all possible strings, including the empty string (\(\lambda\)), that can be formed using the symbols \(0\) and \(1\) in any combination and order. This includes every conceivable sequence of \(0\)s and \(1\)s of any length, such as \(\lambda\), \(0\), \(1\), \(00\), \(01\), \(10\), \(11\), \(001\), \(010\), \(100\), etc.
-
-2. \((\{0\}^* \{1\}^*)^*\) represents the set of all possible strings that can be formed by first forming strings of any number of \(0\)s (including none, which would be the empty string) followed by any number of \(1\)s (also including none) and then repeating this pattern any number of times (including not repeating it at all, which would again include the empty string). Examples of strings in this language include \(\lambda\), \(0\), \(1\), \(00\), \(11\), \(01\), \(001\), \(011\), \(000111\), etc. Essentially, it allows for any number of \(0\)s followed by any number of \(1\)s, and this pattern itself can be repeated any number of times.
-
-Upon comparison, the statement \(\{0, 1\}^* = (\{0\}^* \{1\}^*)^*\) is **true**. This is because:
-
-- \(\{0, 1\}^*\) allows for any sequence of \(0\)s and \(1\)s, which implicitly includes sequences of \(0\)s followed by \(1\)s, sequences of \(1\)s followed by \(0\)s, or any mix thereof.
-- \((\{0\}^* \{1\}^*)^*\) explicitly constructs these sequences by first allowing any number of \(0\)s (including none), followed by any number of \(1\)s (including none), and repeating this process any number of times. This process can generate any possible sequence of \(0\)s and \(1\)s by appropriately choosing when to switch from \(0\)s to \(1\)s in each repetition of the pattern.
-
-In essence, \((\{0\}^* \{1\}^*)^*\) provides a structured way to generate all the sequences that \(\{0, 1\}^*\) encompasses through its unrestricted combination of \(0\)s and \(1\)s. Thus, every string that can be made from \(\{0, 1\}^*\) can also be generated by \((\{0\}^* \{1\}^*)^*\), making these two languages equivalent.
-
-
-To evaluate the statement \(\{0, 1\}^* = (\{0\}^* \{1\}^* \{0\}^*)^*\), let's dissect both sides for better understanding:
-
-1. **\(\{0, 1\}^*\)**: This represents the set of all possible strings, including the empty string (\(\lambda\)), made up of \(0\)s and \(1\)s in any order and combination. This means any sequence or combination of \(0\) and \(1\), regardless of order, is included in this set. Examples include \(\lambda\), \(0\), \(1\), \(01\), \(10\), \(001\), \(110\), \(1010\), etc.
-
-2. **\((\{0\}^* \{1\}^* \{0\}^*)^*\)**: This expression describes the set of all strings that can be formed by concatenating sequences that consist of zero or more \(0\)s, followed by zero or more \(1\)s, followed again by zero or more \(0\)s, and this pattern itself can be repeated any number of times, including not at all (which would include the empty string \(\lambda\)). Essentially, this allows for any combination of \(0\)s and \(1\)s where \(0\)s can appear before and after \(1\)s in any sequence.
-
-Upon inspection, the statement \(\{0, 1\}^* = (\{0\}^* \{1\}^* \{0\}^*)^*\) is **true**, and here's why:
-
-- The left-hand side (\(\{0, 1\}^*\)) includes all possible combinations of \(0\)s and \(1\)s.
-- The right-hand side (\((\{0\}^* \{1\}^* \{0\}^*)^*\)) also generates any possible combination of \(0\)s and \(1\)s by allowing for \(0\)s and \(1\)s to be placed in any sequence, with the added flexibility of interspersing \(0\)s between any number of \(1\)s and vice versa, as well as beginning and ending with any number of \(0\)s.
-
-This formulation specifically permits any sequence of \(0\)s to be followed by any sequence of \(1\)s, with an optional sequence of \(0\)s at the end, and this entire sequence can be repeated. This structure can indeed produce any sequence of \(0\)s and \(1\)s, just as the unrestricted combination on the left-hand side does. By choosing when to repeat the pattern or transition between \(0\)s and \(1\)s within each repetition, any string in \(\{0, 1\}^*\) can be generated.
-
-Thus, because both sides can generate the same set of strings without any restriction on the order or combination of \(0\)s and \(1\)s, the languages they describe are equivalent.
-
-
-
-The statement "If \(A \not\subseteq B\), then \(A^* \not\subseteq B^*\)" is not necessarily true in all cases. To explore this, let's first clarify the involved concepts:
-
-- \(A \not\subseteq B\) indicates that there is at least one element in language \(A\) that is not present in language \(B\).
-- \(A^*\) represents the set of all strings that can be formed by concatenating zero or more strings from \(A\), including the empty string (\(\lambda\)).
-- \(B^*\) similarly represents the set of all strings that can be formed by concatenating zero or more strings from \(B\), including \(\lambda\).
-
-The claim suggests that if there exists at least one string in \(A\) that is not in \(B\), then the set of all strings formed from \(A\) (including repetitions and combinations of its elements) cannot be a subset of the set formed from \(B\).
-
-### Counterexample:
-
-However, this statement can be countered by a specific example where \(A \not\subseteq B\), yet \(A^* \subseteq B^*\).
-
-Consider:
-- \(A = \{0, 11\}\)
-- \(B = \{0\}\)
-
-Here, \(A \not\subseteq B\) because \(11\) is in \(A\) but not in \(B\). However, when considering \(A^*\) and \(B^*\):
-- \(A^*\) includes \(\lambda\), \(0\), \(11\), \(00\), \(011\), \(110\), \(1111\), etc.
-- \(B^*\) includes \(\lambda\), \(0\), \(00\), \(000\), etc.
-
-In this specific example, the initial premise doesn't directly apply because \(A^*\) and \(B^*\) are concerned with combinations of their elements. However, if we adjust \(B\) to also include all possible strings that can be made from the alphabet under consideration (for instance, if \(B\) included not just \(0\), but also \(1\), making \(B = \{0, 1\}\)), then \(B^*\) would include every possible string of \(0\)s and \(1\)s, including those in \(A^*\).
-
-A better counterexample that clearly illustrates \(A^* \subseteq B^*\) even when \(A \not\subseteq B\) is difficult to construct without bending the initial premise of what \(A\) and \(B\) include. Generally, if \(A \not\subseteq B\), one might expect that certain concatenations unique to \(A^*\) (especially involving the unique elements of \(A\) not in \(B\)) could not be replicated in \(B^*\). The critical point is that whether \(A^* \subseteq B^*\) can depend on the specific contents of \(A\) and \(B\) and how their elements can be concatenated and repeated.
-
-Let's revise the premise for clarity:
-
-- **Correct Understanding**: If \(A \not\subseteq B\), then it's possible for \(A^*\) to contain strings not in \(B^*\), especially due to the unique elements of \(A\). However, whether \(A^*\) is not a subset of \(B^*\) will depend on the specific elements of \(A\) and \(B\) and does not hold as a general rule without further specifics about the languages.
-
-
+- **∈ (Belong To):** This symbol is used to indicate that a specific element is a member of a set. When we say "x ∈ A", it means that the element x is contained within the set A. It focuses on individual elements being part of a larger set.
