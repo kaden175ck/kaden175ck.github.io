@@ -10,3 +10,5 @@ Some Draft Content
 * But I think this method is really unnecessay, you can just put a future date and view it directly with command "Jekyll serve" , and when you think its good, just change the data and post it.
 
 ### Another way: You can include a line in your YAML Front Matter to indicate whether a post is published or not: published: true or published: false
+
+### One more note: If I delete the permalink in front matter, it will just be default link like cat/date/postname...
