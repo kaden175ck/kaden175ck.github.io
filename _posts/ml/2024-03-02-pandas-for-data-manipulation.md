@@ -3,6 +3,7 @@ layout: post
 title: "Pandas for Data Manipulation"
 date: 2024-03-02
 categories: machine learning
+permalink: "/ML/PandasDataManipulation"
 ---
 
 **What is Pandas?**

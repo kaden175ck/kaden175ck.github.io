@@ -3,6 +3,7 @@ layout: post
 title: "Reg X and DFA"
 date: 2024-03-03
 categories: general
+permalink: "/General/RegXAndDFA"
 ---
 
 **Front Notes**

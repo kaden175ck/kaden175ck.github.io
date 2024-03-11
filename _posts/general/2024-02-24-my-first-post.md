@@ -3,6 +3,7 @@ layout: post
 title: "Notes about Jekyll"
 date: 2024-02-24
 categories: general
+permalink: "/General/NotesAboutJekyll"
 ---
 
 ## This is just me messing around with Jekyll and some random notes about it. If you are interested about using Jekyll, this might be usefull, just saying:)

@@ -3,6 +3,7 @@ layout: post
 title: "Data Cleaning"
 date: 2024-02-28
 categories: machine learning
+permalink: "/ML/DataCleaning"
 ---
 **Understanding Data Cleaning**
 

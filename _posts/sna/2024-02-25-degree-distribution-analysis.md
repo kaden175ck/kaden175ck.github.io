@@ -3,6 +3,7 @@ layout: post
 title: "Degree Distribution Analysis"
 date: 2024-02-25
 categories: SNA
+permalink: "/SNA/DegreeDistributionAnalysis"
 ---
 
 **What is Degree Distribution?**

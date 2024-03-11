@@ -3,6 +3,7 @@ layout: post
 title: "Network Metrics and Measures"
 date: 2024-02-24
 categories: SNA
+permalink: "/SNA/NetworkMetricsAndMeasures"
 ---
 
 ### Degree

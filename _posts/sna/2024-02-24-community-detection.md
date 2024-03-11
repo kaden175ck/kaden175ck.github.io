@@ -3,6 +3,7 @@ layout: post
 title: "Understanding Community Detection"
 date: 2024-02-24
 categories: SNA
+permalink: "/SNA/UnderstandingCommunityDetection"
 ---
 
 ## What is Community Detection?
