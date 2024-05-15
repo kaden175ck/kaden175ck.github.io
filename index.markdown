@@ -14,6 +14,7 @@ layout: default
         <li><a href="/categories/general">General</a></li>
         <li><a href="/categories/leetcode">LeetCode</a></li>
         <li><a href="/categories/machinelearning">Machine Learning</a></li>
+        <li><a href="/categories/bigdata">Big Data</a></li>
     </ul>
 </div>
 
