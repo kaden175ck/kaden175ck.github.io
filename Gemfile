@@ -26,8 +26,20 @@ platforms :mingw, :x64_mingw, :mswin, :jruby do
 end
 
 # Performance-booster for watching directories on Windows
-gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+# wdm 在 Ruby 3.4 下安装经常报错，注释掉2025,9.26
+# gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin] 
 
 # Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem
 # do not have a Java counterpart.
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
+
+# 2025,9.26
+# Ruby 3.x 以后不内置 webrick，需要单独安装
+# Ruby 3.4/3.5 缺失的库，手动补上
+gem "csv"
+gem "logger"
+gem "webrick"
+
+gem "base64"
+
+gem "fiddle"
